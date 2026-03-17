@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F0905DB29E7EF79C4DAC35A1 /* libPods-GigaChat-CLI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FC48D9A83E13FC095C7528 /* libPods-GigaChat-CLI.a */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		AA78C1102F65AE4100A95983 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -19,6 +23,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18FC48D9A83E13FC095C7528 /* libPods-GigaChat-CLI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GigaChat-CLI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42BFB089EFE6A3C45E1DC143 /* Pods-GigaChat-CLI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaChat-CLI.release.xcconfig"; path = "Target Support Files/Pods-GigaChat-CLI/Pods-GigaChat-CLI.release.xcconfig"; sourceTree = "<group>"; };
+		8DCF5EF38C93226057BFBFD0 /* Pods-GigaChat-CLI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaChat-CLI.debug.xcconfig"; path = "Target Support Files/Pods-GigaChat-CLI/Pods-GigaChat-CLI.debug.xcconfig"; sourceTree = "<group>"; };
 		AA78C1122F65AE4100A95983 /* GigaChat-CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "GigaChat-CLI"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -35,17 +42,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0905DB29E7EF79C4DAC35A1 /* libPods-GigaChat-CLI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55035566E8606F1953242F99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DCF5EF38C93226057BFBFD0 /* Pods-GigaChat-CLI.debug.xcconfig */,
+				42BFB089EFE6A3C45E1DC143 /* Pods-GigaChat-CLI.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AA78C1092F65AE4100A95983 = {
 			isa = PBXGroup;
 			children = (
 				AA78C1142F65AE4100A95983 /* GigaChat-CLI */,
 				AA78C1132F65AE4100A95983 /* Products */,
+				55035566E8606F1953242F99 /* Pods */,
+				CED037A0EC944F4AAB5E2B3F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +76,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CED037A0EC944F4AAB5E2B3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18FC48D9A83E13FC095C7528 /* libPods-GigaChat-CLI.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -64,6 +91,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA78C1192F65AE4100A95983 /* Build configuration list for PBXNativeTarget "GigaChat-CLI" */;
 			buildPhases = (
+				C1331EC4C9767EB62E753863 /* [CP] Check Pods Manifest.lock */,
 				AA78C10E2F65AE4100A95983 /* Sources */,
 				AA78C10F2F65AE4100A95983 /* Frameworks */,
 				AA78C1102F65AE4100A95983 /* CopyFiles */,
@@ -76,8 +104,6 @@
 				AA78C1142F65AE4100A95983 /* GigaChat-CLI */,
 			);
 			name = "GigaChat-CLI";
-			packageProductDependencies = (
-			);
 			productName = "GigaChat-CLI";
 			productReference = AA78C1122F65AE4100A95983 /* GigaChat-CLI */;
 			productType = "com.apple.product-type.tool";
@@ -115,6 +141,31 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C1331EC4C9767EB62E753863 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GigaChat-CLI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA78C10E2F65AE4100A95983 /* Sources */ = {
@@ -249,10 +300,13 @@
 		};
 		AA78C11A2F65AE4100A95983 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DCF5EF38C93226057BFBFD0 /* Pods-GigaChat-CLI.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RS93W547X8;
 				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzconcept.gigachatcli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
@@ -262,10 +316,13 @@
 		};
 		AA78C11B2F65AE4100A95983 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42BFB089EFE6A3C45E1DC143 /* Pods-GigaChat-CLI.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RS93W547X8;
 				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzconcept.gigachatcli;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
