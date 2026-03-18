@@ -9,12 +9,18 @@
 
 ## Запуск
 
+Установите pods:
+
+```
+pod install
+```
+
 Откройте проект:
 
 - `GigaChat-CLI.xcworkspace` (если используете CocoaPods)
 - или `GigaChat-CLI.xcodeproj`
 
-Соберите и запустите таргет `GigaChat-CLI`.
+Соберите и запустите таргет `GigaChat-CLI`. При старте приложение спросит `authKey`.
 
 ## Настройка доступа
 
