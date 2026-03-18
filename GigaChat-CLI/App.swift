@@ -10,14 +10,16 @@ import Foundation
 @main
 struct App {
     static func main() async {
-        guard let chat = Chat() else { return }
+        print("GigaChat CLI")
+        guard let authKey = getpass("Введите ваш authKey для доступа к GigaChat:"),
+            let chat = Chat(authKey: String(cString: authKey))
+        else { return }
                 
         let proc = Process()
         proc.executableURL = URL(fileURLWithPath: "/usr/bin/clear")
         try? proc.run()
         proc.waitUntilExit()
         
-        print("GigaChat CLI:\n\n\n")
         await chat.start()
     }
 }

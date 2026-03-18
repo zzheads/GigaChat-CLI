@@ -14,7 +14,7 @@ final class Chat {
     private var currentTemperature: Double?
     private var currentModelIndex = 0
     
-    init?() {
+    init?(authKey: String) {
         guard let baseURL = URL(string: APIConstants.baseURLString),
               let tokenURL = URL(string: APIConstants.tokenURLString) else {
             return nil
@@ -23,7 +23,7 @@ final class Chat {
         self.gigaChatService = GigaChatAPIService(
             baseURL: baseURL,
             tokenURL: tokenURL,
-            authKey: APIConstants.authKey
+            authKey: authKey
         )
     }
     
